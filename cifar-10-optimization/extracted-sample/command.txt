@@ -1,0 +1,1 @@
+python3 cifar10-resnet20.py --batch_size=1024 --peak_value=.90090000000000000000 --use_nesterov=false --lr_decay=.56620000000000000000 --augmentation=randomcrop,fliplr,normalize --prng_seed=3429

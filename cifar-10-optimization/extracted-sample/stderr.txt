@@ -1,0 +1,517 @@
+2023-04-19 03:06:42.940412: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib
+2023-04-19 03:06:42.964199: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-04-19 03:06:43.575997: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib
+2023-04-19 03:06:43.576103: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib
+2023-04-19 03:06:43.576128: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-04-19 03:06:55.886932: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib
+2023-04-19 03:06:55.886977: W tensorflow/stream_executor/cuda/cuda_driver.cc:263] failed call to cuInit: UNKNOWN ERROR (303)
+2023-04-19 03:06:56.356978: W tensorflow/core/kernels/data/cache_dataset_ops.cc:856] The calling iterator did not fully read the dataset being cached. In order to avoid unexpected truncation of the dataset, the partially cached contents of the dataset  will be discarded. This can happen if you have an input pipeline similar to `dataset.cache().take(k).repeat()`. You should use `dataset.take(k).cache().repeat()` instead.
+2023-04-19 03:06:56.357196: W tensorflow/core/kernels/data/cache_dataset_ops.cc:856] The calling iterator did not fully read the dataset being cached. In order to avoid unexpected truncation of the dataset, the partially cached contents of the dataset  will be discarded. This can happen if you have an input pipeline similar to `dataset.cache().take(k).repeat()`. You should use `dataset.take(k).cache().repeat()` instead.
+JAX version 0.3.21
+JAX devices: ['TPU v2', 'TPU v2', 'TPU v2', 'TPU v2', 'TPU v2', 'TPU v2', 'TPU v2', 'TPU v2']
+TensorFlow version 2.10.0
+TensorFlow Datasets version 4.7.0
+Haiku version 0.0.8
+BATCH_SIZE=1024 PEAK_VALUE=0.9009 USE_NESTEROV=False LR_DECAY=0.5662 PRNG_SEED=3429 USE_RANDOM_CROP=True USE_FLIP_LEFTRIGHT=True USE_GLOBAL_NORMALIZATION=True EPOCHS=100 SHUFFLE_SIZE=2048
+starting training...
+epoch=1 num_processed_images=50000 epoch=1: validation_batch_loss = 1.82597
+  epoch duration 31.48075846210122
+  train duration 22.00503678387031
+  eval duration 9.475721678230911
+  test_accuracy  0.3324
+epoch=2 num_processed_images=100000 epoch=2: validation_batch_loss = 1.78454
+  epoch duration 5.752557038795203
+  train duration 5.121300743892789
+  eval duration 0.6312562949024141
+  test_accuracy  0.3612
+epoch=3 num_processed_images=150000 epoch=3: validation_batch_loss = 1.47756
+  epoch duration 5.631592380348593
+  train duration 4.970907690003514
+  eval duration 0.6606846903450787
+  test_accuracy  0.462
+epoch=4 num_processed_images=200000 epoch=4: validation_batch_loss = 1.37250
+  epoch duration 5.695705489255488
+  train duration 5.01210705190897
+  eval duration 0.683598437346518
+  test_accuracy  0.4871
+epoch=5 num_processed_images=250000 epoch=5: validation_batch_loss = 1.21634
+  epoch duration 5.565456033218652
+  train duration 4.941926266998053
+  eval duration 0.6235297662205994
+  test_accuracy  0.5484
+epoch=6 num_processed_images=300000 epoch=6: validation_batch_loss = 1.72966
+  epoch duration 5.589525914285332
+  train duration 4.962937633041292
+  eval duration 0.6265882812440395
+  test_accuracy  0.4601
+epoch=7 num_processed_images=350000 epoch=7: validation_batch_loss = 1.36951
+  epoch duration 5.648613833356649
+  train duration 5.031530756969005
+  eval duration 0.6170830763876438
+  test_accuracy  0.5208
+epoch=8 num_processed_images=400000 epoch=8: validation_batch_loss = 1.25485
+  epoch duration 5.609129304997623
+  train duration 5.0041373572312295
+  eval duration 0.6049919477663934
+  test_accuracy  0.5404
+epoch=9 num_processed_images=450000 epoch=9: validation_batch_loss = 1.16704
+  epoch duration 5.679676586296409
+  train duration 5.045452103018761
+  eval duration 0.6342244832776487
+  test_accuracy  0.5984
+epoch=10 num_processed_images=500000 epoch=10: validation_batch_loss = 1.95277
+  epoch duration 5.609524657949805
+  train duration 4.956420783884823
+  eval duration 0.6531038740649819
+  test_accuracy  0.5173
+epoch=11 num_processed_images=550000 epoch=11: validation_batch_loss = 1.23166
+  epoch duration 5.61547519126907
+  train duration 4.977931013330817
+  eval duration 0.6375441779382527
+  test_accuracy  0.6128
+epoch=12 num_processed_images=600000 epoch=12: validation_batch_loss = 1.23654
+  epoch duration 5.718072143848985
+  train duration 5.076427606865764
+  eval duration 0.6416445369832218
+  test_accuracy  0.6352
+epoch=13 num_processed_images=650000 epoch=13: validation_batch_loss = 2.09860
+  epoch duration 5.6166126085445285
+  train duration 4.958492435980588
+  eval duration 0.6581201725639403
+  test_accuracy  0.5176
+epoch=14 num_processed_images=700000 epoch=14: validation_batch_loss = 1.08296
+  epoch duration 5.65875035431236
+  train duration 5.022669175174087
+  eval duration 0.636081179138273
+  test_accuracy  0.6367
+epoch=15 num_processed_images=750000 epoch=15: validation_batch_loss = 1.13007
+  epoch duration 5.687796232290566
+  train duration 5.018516622949392
+  eval duration 0.6692796093411744
+  test_accuracy  0.6433
+epoch=16 num_processed_images=800000 epoch=16: validation_batch_loss = 0.87671
+  epoch duration 5.677672970108688
+  train duration 5.059516090899706
+  eval duration 0.618156879208982
+  test_accuracy  0.7093
+epoch=17 num_processed_images=850000 epoch=17: validation_batch_loss = 1.08352
+  epoch duration 5.565580601803958
+  train duration 4.930317183025181
+  eval duration 0.6352634187787771
+  test_accuracy  0.6548
+epoch=18 num_processed_images=900000 epoch=18: validation_batch_loss = 1.33577
+  epoch duration 5.51390586188063
+  train duration 4.889115607831627
+  eval duration 0.6247902540490031
+  test_accuracy  0.6391
+epoch=19 num_processed_images=950000 epoch=19: validation_batch_loss = 1.12670
+  epoch duration 5.674223591107875
+  train duration 5.025557929184288
+  eval duration 0.6486656619235873
+  test_accuracy  0.6704
+epoch=20 num_processed_images=1000000 epoch=20: validation_batch_loss = 1.02808
+  epoch duration 5.598647917620838
+  train duration 4.9821888748556376
+  eval duration 0.6164590427652001
+  test_accuracy  0.6647
+epoch=21 num_processed_images=1050000 epoch=21: validation_batch_loss = 2.49507
+  epoch duration 5.648184704594314
+  train duration 5.009787767659873
+  eval duration 0.6383969369344413
+  test_accuracy  0.4958
+epoch=22 num_processed_images=1100000 epoch=22: validation_batch_loss = 0.79448
+  epoch duration 5.671667896211147
+  train duration 5.012145763263106
+  eval duration 0.659522132948041
+  test_accuracy  0.7288
+epoch=23 num_processed_images=1150000 epoch=23: validation_batch_loss = 0.98564
+  epoch duration 5.676226285751909
+  train duration 5.024750964716077
+  eval duration 0.6514753210358322
+  test_accuracy  0.7053
+epoch=24 num_processed_images=1200000 epoch=24: validation_batch_loss = 0.94549
+  epoch duration 5.61839604889974
+  train duration 5.0093338578008115
+  eval duration 0.6090621910989285
+  test_accuracy  0.7125
+epoch=25 num_processed_images=1250000 epoch=25: validation_batch_loss = 0.69935
+  epoch duration 5.562253511045128
+  train duration 4.965380205307156
+  eval duration 0.5968733057379723
+  test_accuracy  0.7676
+epoch=26 num_processed_images=1300000 epoch=26: validation_batch_loss = 0.63847
+  epoch duration 5.5952237183228135
+  train duration 4.977912832051516
+  eval duration 0.6173108862712979
+  test_accuracy  0.7826
+epoch=27 num_processed_images=1350000 epoch=27: validation_batch_loss = 0.56807
+  epoch duration 5.657137149013579
+  train duration 5.052518862765282
+  eval duration 0.6046182862482965
+  test_accuracy  0.7871
+epoch=28 num_processed_images=1400000 epoch=28: validation_batch_loss = 0.88437
+  epoch duration 5.653539674822241
+  train duration 5.009199167601764
+  eval duration 0.6443405072204769
+  test_accuracy  0.7329
+epoch=29 num_processed_images=1450000 epoch=29: validation_batch_loss = 1.44394
+  epoch duration 5.616981661878526
+  train duration 4.97239981032908
+  eval duration 0.6445818515494466
+  test_accuracy  0.6353
+epoch=30 num_processed_images=1500000 epoch=30: validation_batch_loss = 0.78709
+  epoch duration 5.6469338168390095
+  train duration 4.996469720732421
+  eval duration 0.6504640961065888
+  test_accuracy  0.7345
+epoch=31 num_processed_images=1550000 epoch=31: validation_batch_loss = 0.64175
+  epoch duration 5.576745794620365
+  train duration 4.956748196855187
+  eval duration 0.6199975977651775
+  test_accuracy  0.8021
+epoch=32 num_processed_images=1600000 epoch=32: validation_batch_loss = 0.65734
+  epoch duration 5.599103620275855
+  train duration 4.967712926212698
+  eval duration 0.6313906940631568
+  test_accuracy  0.7687
+epoch=33 num_processed_images=1650000 epoch=33: validation_batch_loss = 0.46143
+  epoch duration 5.743102776817977
+  train duration 5.096151627600193
+  eval duration 0.6469511492177844
+  test_accuracy  0.8373
+epoch=34 num_processed_images=1700000 epoch=34: validation_batch_loss = 0.64963
+  epoch duration 5.638644888997078
+  train duration 4.988892155699432
+  eval duration 0.649752733297646
+  test_accuracy  0.7873
+epoch=35 num_processed_images=1750000 epoch=35: validation_batch_loss = 0.59077
+  epoch duration 5.525719386991113
+  train duration 4.896261315327138
+  eval duration 0.6294580716639757
+  test_accuracy  0.8058
+epoch=36 num_processed_images=1800000 epoch=36: validation_batch_loss = 0.54550
+  epoch duration 5.524180028121918
+  train duration 4.899687729775906
+  eval duration 0.6244922983460128
+  test_accuracy  0.8158
+epoch=37 num_processed_images=1850000 epoch=37: validation_batch_loss = 0.59904
+  epoch duration 5.661306622903794
+  train duration 5.019492940045893
+  eval duration 0.6418136828579009
+  test_accuracy  0.8151
+epoch=38 num_processed_images=1900000 epoch=38: validation_batch_loss = 0.56687
+  epoch duration 5.682251812890172
+  train duration 5.044639201834798
+  eval duration 0.6376126110553741
+  test_accuracy  0.8158
+epoch=39 num_processed_images=1950000 epoch=39: validation_batch_loss = 0.52788
+  epoch duration 5.635929363779724
+  train duration 5.013565588742495
+  eval duration 0.6223637750372291
+  test_accuracy  0.8236
+epoch=40 num_processed_images=2000000 epoch=40: validation_batch_loss = 0.48964
+  epoch duration 5.61094347666949
+  train duration 4.984607930760831
+  eval duration 0.6263355459086597
+  test_accuracy  0.8288
+epoch=41 num_processed_images=2050000 epoch=41: validation_batch_loss = 0.57365
+  epoch duration 5.6685214578174055
+  train duration 5.048928832169622
+  eval duration 0.6195926256477833
+  test_accuracy  0.8139
+epoch=42 num_processed_images=2100000 epoch=42: validation_batch_loss = 0.56016
+  epoch duration 5.660648409277201
+  train duration 5.036472793202847
+  eval duration 0.6241756160743535
+  test_accuracy  0.818
+epoch=43 num_processed_images=2150000 epoch=43: validation_batch_loss = 0.49292
+  epoch duration 5.648393060080707
+  train duration 5.007139049936086
+  eval duration 0.6412540101446211
+  test_accuracy  0.8386
+epoch=44 num_processed_images=2200000 epoch=44: validation_batch_loss = 0.57380
+  epoch duration 5.609649774618447
+  train duration 4.980294174980372
+  eval duration 0.6293555996380746
+  test_accuracy  0.8202
+epoch=45 num_processed_images=2250000 epoch=45: validation_batch_loss = 0.46608
+  epoch duration 5.662035023327917
+  train duration 5.006813966203481
+  eval duration 0.6552210571244359
+  test_accuracy  0.8494
+epoch=46 num_processed_images=2300000 epoch=46: validation_batch_loss = 0.48626
+  epoch duration 5.570346843916923
+  train duration 4.96577874571085
+  eval duration 0.604568098206073
+  test_accuracy  0.8522
+epoch=47 num_processed_images=2350000 epoch=47: validation_batch_loss = 0.56754
+  epoch duration 5.5190142509527504
+  train duration 4.896077144891024
+  eval duration 0.6229371060617268
+  test_accuracy  0.8218
+epoch=48 num_processed_images=2400000 epoch=48: validation_batch_loss = 0.48466
+  epoch duration 5.539058827795088
+  train duration 4.911514066159725
+  eval duration 0.6275447616353631
+  test_accuracy  0.8534
+epoch=49 num_processed_images=2450000 epoch=49: validation_batch_loss = 0.48974
+  epoch duration 5.582898715976626
+  train duration 4.975199932232499
+  eval duration 0.6076987837441266
+  test_accuracy  0.8553
+epoch=50 num_processed_images=2500000 epoch=50: validation_batch_loss = 0.49769
+  epoch duration 5.737611541990191
+  train duration 5.09121854417026
+  eval duration 0.6463929978199303
+  test_accuracy  0.8476
+epoch=51 num_processed_images=2550000 epoch=51: validation_batch_loss = 0.48218
+  epoch duration 5.659535754937679
+  train duration 5.021180455107242
+  eval duration 0.6383552998304367
+  test_accuracy  0.853
+epoch=52 num_processed_images=2600000 epoch=52: validation_batch_loss = 0.46804
+  epoch duration 5.710260287858546
+  train duration 5.060441802721471
+  eval duration 0.6498184851370752
+  test_accuracy  0.8571
+epoch=53 num_processed_images=2650000 epoch=53: validation_batch_loss = 0.55844
+  epoch duration 5.608261354267597
+  train duration 4.97618197184056
+  eval duration 0.6320793824270368
+  test_accuracy  0.8457
+epoch=54 num_processed_images=2700000 epoch=54: validation_batch_loss = 0.54229
+  epoch duration 5.609412303194404
+  train duration 4.974994871299714
+  eval duration 0.6344174318946898
+  test_accuracy  0.8362
+epoch=55 num_processed_images=2750000 epoch=55: validation_batch_loss = 0.52866
+  epoch duration 5.621092315297574
+  train duration 4.988918127026409
+  eval duration 0.6321741882711649
+  test_accuracy  0.8419
+epoch=56 num_processed_images=2800000 epoch=56: validation_batch_loss = 0.56446
+  epoch duration 5.569334040861577
+  train duration 4.930001336149871
+  eval duration 0.6393327047117054
+  test_accuracy  0.8402
+epoch=57 num_processed_images=2850000 epoch=57: validation_batch_loss = 0.50562
+  epoch duration 5.601213003043085
+  train duration 4.986012239009142
+  eval duration 0.6152007640339434
+  test_accuracy  0.8514
+epoch=58 num_processed_images=2900000 epoch=58: validation_batch_loss = 0.49315
+  epoch duration 5.54555752966553
+  train duration 4.896931046620011
+  eval duration 0.6486264830455184
+  test_accuracy  0.8527
+epoch=59 num_processed_images=2950000 epoch=59: validation_batch_loss = 0.50434
+  epoch duration 5.644293200224638
+  train duration 5.0147341983392835
+  eval duration 0.6295590018853545
+  test_accuracy  0.8534
+epoch=60 num_processed_images=3000000 epoch=60: validation_batch_loss = 0.51099
+  epoch duration 5.624293103814125
+  train duration 4.967838030774146
+  eval duration 0.6564550730399787
+  test_accuracy  0.8573
+epoch=61 num_processed_images=3050000 epoch=61: validation_batch_loss = 0.65422
+  epoch duration 5.682158127892762
+  train duration 5.0514359646476805
+  eval duration 0.6307221632450819
+  test_accuracy  0.8317
+epoch=62 num_processed_images=3100000 epoch=62: validation_batch_loss = 0.54006
+  epoch duration 5.653648029081523
+  train duration 5.0209344630129635
+  eval duration 0.6327135660685599
+  test_accuracy  0.855
+epoch=63 num_processed_images=3150000 epoch=63: validation_batch_loss = 0.45189
+  epoch duration 5.508570301346481
+  train duration 4.894100565928966
+  eval duration 0.614469735417515
+  test_accuracy  0.8667
+epoch=64 num_processed_images=3200000 epoch=64: validation_batch_loss = 0.56183
+  epoch duration 5.7389990468509495
+  train duration 5.0446583540178835
+  eval duration 0.694340692833066
+  test_accuracy  0.8421
+epoch=65 num_processed_images=3250000 epoch=65: validation_batch_loss = 0.45103
+  epoch duration 5.609158203005791
+  train duration 4.989178155083209
+  eval duration 0.6199800479225814
+  test_accuracy  0.8736
+epoch=66 num_processed_images=3300000 epoch=66: validation_batch_loss = 0.50350
+  epoch duration 5.6548441159538925
+  train duration 5.03247015690431
+  eval duration 0.6223739590495825
+  test_accuracy  0.8654
+epoch=67 num_processed_images=3350000 epoch=67: validation_batch_loss = 0.46279
+  epoch duration 5.694181345868856
+  train duration 5.064851331990212
+  eval duration 0.6293300138786435
+  test_accuracy  0.8713
+epoch=68 num_processed_images=3400000 epoch=68: validation_batch_loss = 0.53046
+  epoch duration 5.590443053282797
+  train duration 4.980356984306127
+  eval duration 0.6100860689766705
+  test_accuracy  0.8611
+epoch=69 num_processed_images=3450000 epoch=69: validation_batch_loss = 0.46598
+  epoch duration 5.545221367385238
+  train duration 4.892529679462314
+  eval duration 0.6526916879229248
+  test_accuracy  0.8773
+epoch=70 num_processed_images=3500000 epoch=70: validation_batch_loss = 0.50237
+  epoch duration 5.53208486828953
+  train duration 4.930505554191768
+  eval duration 0.6015793140977621
+  test_accuracy  0.8727
+epoch=71 num_processed_images=3550000 epoch=71: validation_batch_loss = 0.46149
+  epoch duration 5.621836960315704
+  train duration 5.0144828972406685
+  eval duration 0.6073540630750358
+  test_accuracy  0.8818
+epoch=72 num_processed_images=3600000 epoch=72: validation_batch_loss = 0.48551
+  epoch duration 5.58048275206238
+  train duration 4.936133798211813
+  eval duration 0.6443489538505673
+  test_accuracy  0.8729
+epoch=73 num_processed_images=3650000 epoch=73: validation_batch_loss = 0.49249
+  epoch duration 5.559145289938897
+  train duration 4.944328585639596
+  eval duration 0.6148167042993009
+  test_accuracy  0.8801
+epoch=74 num_processed_images=3700000 epoch=74: validation_batch_loss = 0.48039
+  epoch duration 5.649822575971484
+  train duration 5.024696900974959
+  eval duration 0.625125674996525
+  test_accuracy  0.8788
+epoch=75 num_processed_images=3750000 epoch=75: validation_batch_loss = 0.51135
+  epoch duration 5.617277664132416
+  train duration 4.996505117975175
+  eval duration 0.6207725461572409
+  test_accuracy  0.8738
+epoch=76 num_processed_images=3800000 epoch=76: validation_batch_loss = 0.52049
+  epoch duration 5.76041858876124
+  train duration 5.1029239860363305
+  eval duration 0.6574946027249098
+  test_accuracy  0.8757
+epoch=77 num_processed_images=3850000 epoch=77: validation_batch_loss = 0.42456
+  epoch duration 5.618454667273909
+  train duration 4.9904885701835155
+  eval duration 0.6279660970903933
+  test_accuracy  0.8842
+epoch=78 num_processed_images=3900000 epoch=78: validation_batch_loss = 0.45557
+  epoch duration 5.641486627981067
+  train duration 5.0069090579636395
+  eval duration 0.6345775700174272
+  test_accuracy  0.8828
+epoch=79 num_processed_images=3950000 epoch=79: validation_batch_loss = 0.45866
+  epoch duration 5.564411593135446
+  train duration 4.9731177859939635
+  eval duration 0.5912938071414828
+  test_accuracy  0.881
+epoch=80 num_processed_images=4000000 epoch=80: validation_batch_loss = 0.46065
+  epoch duration 5.62844854593277
+  train duration 4.996561653912067
+  eval duration 0.6318868920207024
+  test_accuracy  0.8816
+epoch=81 num_processed_images=4050000 epoch=81: validation_batch_loss = 0.44921
+  epoch duration 5.545191264245659
+  train duration 4.923974124249071
+  eval duration 0.6212171399965882
+  test_accuracy  0.8874
+epoch=82 num_processed_images=4100000 epoch=82: validation_batch_loss = 0.45066
+  epoch duration 5.513237914070487
+  train duration 4.885974117089063
+  eval duration 0.6272637969814241
+  test_accuracy  0.8868
+epoch=83 num_processed_images=4150000 epoch=83: validation_batch_loss = 0.44889
+  epoch duration 5.620183201972395
+  train duration 4.950033624190837
+  eval duration 0.670149577781558
+  test_accuracy  0.8894
+epoch=84 num_processed_images=4200000 epoch=84: validation_batch_loss = 0.47499
+  epoch duration 5.679105670191348
+  train duration 5.069230111781508
+  eval duration 0.6098755584098399
+  test_accuracy  0.885
+epoch=85 num_processed_images=4250000 epoch=85: validation_batch_loss = 0.45173
+  epoch duration 5.677053919993341
+  train duration 5.0102278627455235
+  eval duration 0.6668260572478175
+  test_accuracy  0.8897
+epoch=86 num_processed_images=4300000 epoch=86: validation_batch_loss = 0.44812
+  epoch duration 5.780634758993983
+  train duration 5.144312954042107
+  eval duration 0.6363218049518764
+  test_accuracy  0.8902
+epoch=87 num_processed_images=4350000 epoch=87: validation_batch_loss = 0.46928
+  epoch duration 5.613574156071991
+  train duration 4.996154963038862
+  eval duration 0.617419193033129
+  test_accuracy  0.8881
+epoch=88 num_processed_images=4400000 epoch=88: validation_batch_loss = 0.46638
+  epoch duration 5.67427264386788
+  train duration 5.0247942679561675
+  eval duration 0.6494783759117126
+  test_accuracy  0.8865
+epoch=89 num_processed_images=4450000 epoch=89: validation_batch_loss = 0.45145
+  epoch duration 5.700274807866663
+  train duration 5.002099623903632
+  eval duration 0.6981751839630306
+  test_accuracy  0.8898
+epoch=90 num_processed_images=4500000 epoch=90: validation_batch_loss = 0.47381
+  epoch duration 5.670154481194913
+  train duration 5.002656999975443
+  eval duration 0.6674974812194705
+  test_accuracy  0.8914
+epoch=91 num_processed_images=4550000 epoch=91: validation_batch_loss = 0.47257
+  epoch duration 5.65996482828632
+  train duration 5.033953793346882
+  eval duration 0.6260110349394381
+  test_accuracy  0.8905
+epoch=92 num_processed_images=4600000 epoch=92: validation_batch_loss = 0.46135
+  epoch duration 5.699208978097886
+  train duration 5.086521510966122
+  eval duration 0.6126874671317637
+  test_accuracy  0.8891
+epoch=93 num_processed_images=4650000 epoch=93: validation_batch_loss = 0.47326
+  epoch duration 5.546754258684814
+  train duration 4.8943615928292274
+  eval duration 0.6523926658555865
+  test_accuracy  0.89
+epoch=94 num_processed_images=4700000 epoch=94: validation_batch_loss = 0.45284
+  epoch duration 5.74302587704733
+  train duration 5.073598483111709
+  eval duration 0.6694273939356208
+  test_accuracy  0.8907
+epoch=95 num_processed_images=4750000 epoch=95: validation_batch_loss = 0.48095
+  epoch duration 5.7262589279562235
+  train duration 5.084711690898985
+  eval duration 0.6415472370572388
+  test_accuracy  0.8907
+epoch=96 num_processed_images=4800000 epoch=96: validation_batch_loss = 0.46674
+  epoch duration 5.589549137745053
+  train duration 4.96626011794433
+  eval duration 0.6232890198007226
+  test_accuracy  0.8904
+epoch=97 num_processed_images=4850000 epoch=97: validation_batch_loss = 0.46213
+  epoch duration 5.603430177085102
+  train duration 4.989043197128922
+  eval duration 0.6143869799561799
+  test_accuracy  0.8914
+epoch=98 num_processed_images=4900000 epoch=98: validation_batch_loss = 0.46010
+  epoch duration 5.880854298826307
+  train duration 4.967573344707489
+  eval duration 0.913280954118818
+  test_accuracy  0.8919
+epoch=99 num_processed_images=4950000 epoch=99: validation_batch_loss = 0.46030
+  epoch duration 5.551102411933243
+  train duration 4.906241957098246
+  eval duration 0.6448604548349977
+  test_accuracy  0.8905
+epoch=100 num_processed_images=5000000 epoch=100: validation_batch_loss = 0.45970
+  epoch duration 5.654568540863693
+  train duration 5.028991458937526
+  eval duration 0.625577081926167
+  test_accuracy  0.8916
+{'total': 595.0643991883844, 'training': 589.6813952173106, 'setup': 5.3830039710737765}
