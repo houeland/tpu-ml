@@ -1,4 +1,7 @@
 # tpu-ml
+
+See https://houeland.github.io/ for visualizations.
+
 Notes from training machine learning models on TPU Research Cloud
 
 * cifar-10-optimization: Results from 10k+ training runs on CIFAR-10 with different optimizer settings.
