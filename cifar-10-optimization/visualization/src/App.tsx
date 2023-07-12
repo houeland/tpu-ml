@@ -132,18 +132,6 @@ function useSelect(defaultValue: string) {
   return { value, onChange };
 }
 
-function Qq(props: PropsWithChildren<{}>) {
-  return <span className="quotedtext">{props.children}</span>;
-}
-
-function Ee(props: PropsWithChildren<{}>) {
-  return (
-    <b>
-      <i>{props.children}</i>
-    </b>
-  );
-}
-
 function color_by_nesterov_diff_sum(rows: Row[]) {
   let nesterov_diff_sum = 0;
   for (const r of rows) {
