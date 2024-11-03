@@ -4,9 +4,11 @@ import jax
 import jax.numpy as jnp
 from typing import Iterator, NamedTuple
 
+from configs import default as config_lib
+
+config = config_lib.get_config()
+
 VOCAB_SIZE = 256
-SEQUENCE_LENGTH = 256
-BATCH_SIZE = 16
 
 
 class Batch(NamedTuple):
@@ -18,8 +20,10 @@ def load_from_file(filename: str) -> Iterator[Batch]:
     with open(filename, "rb") as file:
         array = jnp.frombuffer(file.read(), dtype=jnp.uint8)
 
-    crop_len = SEQUENCE_LENGTH + 1
-    num_batches, remainder = jnp.divmod(array.shape[0], BATCH_SIZE * crop_len)
+    crop_len = config.dataset_sequence_length + 1  # type: ignore
+    _num_batches, remainder = jnp.divmod(
+        array.shape[0], config.dataset_batch_size * crop_len
+    )
     if remainder:
         array = array[:-remainder]
     ds = array.reshape([-1, crop_len])
@@ -28,7 +32,7 @@ def load_from_file(filename: str) -> Iterator[Batch]:
     batch = []
     for row in it:
         batch.append(row)
-        if len(batch) == BATCH_SIZE:
+        if len(batch) == config.dataset_batch_size:
             data = jnp.stack(batch)
             yield Batch(inputs=data[:, :-1], targets=data[:, 1:])
             batch = []

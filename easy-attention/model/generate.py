@@ -116,6 +116,7 @@ def make_training_example(rng1, rng2):
     return fs[which](rng2)
 
 
+ADD_ATTN_DATA = True
 def do_1k_examples(rng_key, total_idx):
     rng_key, *rngs = jax.random.split(rng_key, 1 + 2048)
     for idx in range(0, 2048, 2):
@@ -123,6 +124,9 @@ def do_1k_examples(rng_key, total_idx):
         # print(total_idx, idx, q, ans, file=sys.stderr)
         total_idx += 1
         #   print(q)
+        if ADD_ATTN_DATA:
+          # X and Y are placeholders for the most-impactful-digit and its position in the numbers array, which must be filled in dynamically based on a model
+          ans = f'{ans};X@#Y'
         l = json.dumps(dict(question=q, solution=ans))
         print(l)
     return rng_key, total_idx

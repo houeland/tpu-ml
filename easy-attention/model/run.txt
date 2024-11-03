@@ -1,0 +1,22 @@
+# first, need python3.9+!
+sudo apt install python3.9 python3.9-venv
+
+python3.9 -m venv venv-easy-attention
+
+source venv-easy-attention/bin/activate
+
+pip install "jax[tpu]==0.4.16" -f https://storage.googleapis.com/jax-releases/libtpu_releases.html optax==0.1.7 flax==0.7.4 ml-collections==0.1.1
+
+
+== CPU ==
+2023-09-29 13:18:09 WARNING  [154832] loss: 1111.267822265625, accuracy: 0.88525390625
+python3 train.py  72186.44s user 14965.92s system 186% cpu 13:00:48.11 total
+
+== TPU ==
+2023-10-05 11:09:58 WARNING  [154832] loss: 0.26289889216423035, accuracy: 0.888671875
+I0000 00:00:1696504198.807205 1669422 tfrt_cpu_pjrt_client.cc:352] TfrtCpuClient destroyed.
+real    2m46.348s
+
+
+gcloud auth configure-docker europe-docker.pkg.dev
+sudo docker pull europe-docker.pkg.dev/colab-images/public/runtime:latest

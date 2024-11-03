@@ -4,8 +4,6 @@ import jax
 import jax.numpy as jnp
 import pprint
 
-from arrays import WrappedArray, wrap
-
 
 class Transformer(nn.Module):
     num_attention_heads: int
@@ -16,7 +14,7 @@ class Transformer(nn.Module):
     widening_factor: int = 4  # factor for widening MLP hidden layer
 
     @nn.compact
-    def __call__(self, embeddings: WrappedArray) -> WrappedArray:
+    def __call__(self, embeddings: jax.Array) -> jax.Array:
         initializer = nn.initializers.variance_scaling(
             2 / self.num_layers, "fan_in", "truncated_normal"
         )
@@ -27,7 +25,7 @@ class Transformer(nn.Module):
         causal_mask = jnp.tril(jnp.ones((1, 1, seq_len, seq_len)))
         print(f"{causal_mask=}")
 
-        h = embeddings.jax_array
+        h = embeddings
         for _ in range(self.num_layers):
             # First the attention block.
             attn_block = nn.SelfAttention(
@@ -77,50 +75,44 @@ class AutoregressiveTransformerModel(nn.Module):
     def __call__(self, in_tokens: jax.Array) -> jax.Array:
         """Forward pass, producing a sequence of logits."""
         # tokens.shape = (BATCH_SIZE, SEQUENCE_LENGTH)
-        tokens = wrap(in_tokens)
+        tokens = in_tokens
         print(f"{tokens=}")
         num_batches, seq_len = tokens.shape
         print(f"{num_batches=}, {seq_len=}")
 
         # token_embeddings.shape = (BATCH_SIZE, SEQUENCE_LENGTH, EMBEDDING_SIZE)
-        token_embeddings = wrap(
-            nn.Embed(
-                num_embeddings=self.vocab_size,
-                features=self.embed_dim,
-                embedding_init=jax.nn.initializers.truncated_normal(stddev=0.02),
-                name="embed__model_tokens_input",
-            )(tokens.jax_array)
-        )
+        token_embeddings = nn.Embed(
+            num_embeddings=self.vocab_size,
+            features=self.embed_dim,
+            embedding_init=jax.nn.initializers.truncated_normal(stddev=0.02),
+            name="embed__model_tokens_input",
+        )(tokens)
+
         # positional_embeddings.shape = (SEQUENCE_LENGTH, EMBEDDING_SIZE)
         # alternatively, fixed sinusoidal embeddings, or rotary embeddings?
-        positional_embeddings = wrap(
-            self.param(
-                "positional_embeddings",
-                lambda key: jax.nn.initializers.truncated_normal(stddev=0.02)(
-                    key, [seq_len, self.embed_dim]
-                ),
-            )
+        positional_embeddings = self.param(
+            "positional_embeddings",
+            lambda key: jax.nn.initializers.truncated_normal(stddev=0.02)(
+                key, [seq_len, self.embed_dim]
+            ),
         )
         print(f"{token_embeddings=}, {positional_embeddings=}")
 
         # input_embeddings.shape = (BATCH_SIZE, SEQUENCE_LENGTH, EMBEDDING_SIZE)
         # add dropout???
-        input_embeddings = wrap(
-            token_embeddings.jax_array + positional_embeddings.jax_array
-        )
+        input_embeddings = token_embeddings + positional_embeddings
+
         # output.shape = ???
         rng_key = jax.random.key(12345)
-        output = wrap(self.transformer(input_embeddings))
+        output = self.transformer(input_embeddings)
         print(f"{input_embeddings=}, {output=}")
 
-        decoded = wrap(
-            nn.Dense(
-                self.vocab_size,
-                name="dense__decode_transformer_output",
-            )(output.jax_array)
-        )
+        decoded = nn.Dense(
+            self.vocab_size,
+            name="dense__decode_transformer_output",
+        )(output)
         print(f"{decoded=}")
-        return decoded.jax_array
+        return decoded
 
 
 if __name__ == "__main__":
